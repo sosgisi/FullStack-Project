@@ -73,18 +73,20 @@ const SignIn = () => {
             : null }
             <div className="absolute w-full h-screen bg-black bg-opacity-60"></div>
             <h1 onClick={(e) => navigate('/')} className="text-red-600 text-2xl font-bold p-5 cursor-pointer opacity-90">NETFLIX</h1>
-            <h1 className="text-white w-full text-center font-bold text-3xl p-5 mb-5 opacity-90">Sign In</h1>
-            <div className="flex flex-col justify-center items-center text-center gap-5 opacity-90">
-                <div className="bg-white rounded-md">
-                    <input onChange={(e) => setEmail(e.target.value)} className="text-white bg-black/90 rounded-md border-2 border-gray-500 py-4 pr-36 pl-6" type="text" placeholder="Email" />
+            <div className="flex flex-col h-screen justify-center items-center text-center opacity-90">
+                <div className="absolute flex flex-col justify-center items-center gap-5 top-32 w-[40%] h-[70%] sm:bg-black sm:bg-opacity-90">
+                    <h1 className="absolute top-10 text-white w-full text-center font-bold text-3xl opacity-90">Sign In</h1>
+                    <div className="bg-white rounded-md">
+                        <input onChange={(e) => setEmail(e.target.value)} className="text-white bg-black/90 rounded-md border-2 border-gray-500 py-4 pr-36 pl-6" type="text" placeholder="Email" />
+                    </div>
+                    <div className="bg-white rounded-md mb-4">
+                        <input onChange={(e) => setPassword(e.target.value)} className="text-white bg-black/90 rounded-md border-2 border-gray-500 py-4 pr-36 pl-6" type="password" placeholder="Password" />
+                    </div>
+                    { error ? <p className="text-red-500 text-md pb-5">{error}</p> : null}
+                    <button onClick={handleSignIn} className="text-white text-xl bg-red-600 hover:bg-red-700 font-bold py-2 px-36 rounded-md">Sign In</button>
+                    <p className="absolute bottom-0 left-0 text-gray-500 p-10 opacity-90">New to netflix? <span className="cursor-pointer text-gray-300 hover:text-white" onClick={(e) => navigate('/sign-up')}>Sign up now.</span></p>
                 </div>
-                <div className="bg-white rounded-md mb-4">
-                    <input onChange={(e) => setPassword(e.target.value)} className="text-white bg-black/90 rounded-md border-2 border-gray-500 py-4 pr-36 pl-6" type="password" placeholder="Password" />
-                </div>
-                { error ? <p className="text-red-500 text-md pb-5">{error}</p> : null}
-                <button onClick={handleSignIn} className="text-white text-xl bg-red-600 font-bold py-2 px-36 rounded-md">Sign In</button>
             </div>
-            <p className="text-gray-400 p-5 pt-40 opacity-90">New to netflix? <a className="text-white" href="/sign-up">Sign up now.</a></p>
         </div>
     )
 }

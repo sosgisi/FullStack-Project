@@ -1,4 +1,4 @@
-import { faXmark } from "@fortawesome/free-solid-svg-icons"
+import { faX, faXmark } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useNavigate } from "react-router-dom"
 // import { UserAuth } from "../context/AuthContext"
@@ -83,15 +83,18 @@ const SignUp = () => {
                     <div className="custom-loader absolute top-20 left-[50%] z-10"></div>
             : null }
             <div className="absolute w-full h-screen sm:bg-black sm:bg-opacity-70"></div>
-            <FontAwesomeIcon onClick={(e) => navigate('/')} className="absolute right-0 p-5 text-3xl sm:text-white opacity-90 cursor-pointer" icon={faXmark} />
-            <div className="pt-32 flex flex-col justify-center items-center text-center opacity-90">
-                <h1 className="text-black font-bold text-3xl sm:text-white">Ready to watch?</h1>
-                <p className="w-[90%] text-xl text-gray-600 sm:text-gray-200 py-10">Enter your email to create or sign in to your account.</p>
-                <input onChange={(e) => setEmail(e.target.value)} className="border-green-500 border-2 pr-20 pl-5 py-2 rounded-lg mb-5" type="text" placeholder="Email" />
-                <input onChange={(e) => setPassword(e.target.value)} className="border-green-500 border-2 pr-20 pl-5 py-2 rounded-lg mb-5" type="password" placeholder="Password" />
-                <input onChange={(e) => setSecondPassword(e.target.value)} className="border-green-500 border-2 pr-20 pl-5 py-2 rounded-lg mb-2" type="password" placeholder="Re-type password" />
-                {error ? <p className="text-red-500 text-md pb-5">{error}</p> : null}
-                <button onClick={handleSignUp} className="text-white font-bold bg-red-600 rounded-md py-2 px-28">Sign Up</button>
+            <h1 onClick={(e) => navigate('/')} className="text-red-600 text-2xl font-bold pt-5 pl-5 cursor-pointer opacity-90">NETFLIX</h1>
+            <div className="flex h-screen flex-col justify-center items-center text-center opacity-90">
+                <div className="absolute flex flex-col justify-center items-center w-[40%] h-[70%] sm:bg-black sm:bg-opacity-90">
+                    <h1 className="absolute top-5 text-black font-bold text-3xl sm:text-white">Ready to watch?</h1>
+                    <p className="absolute top-20 w-[90%] text-xl text-gray-600 sm:text-gray-200">Enter your email to create or sign in to your account.</p>
+                    <input onChange={(e) => setEmail(e.target.value)} className="border-green-500 border-2 pr-20 pl-5 py-2 rounded-lg my-5" type="text" placeholder="Email" />
+                    <input onChange={(e) => setPassword(e.target.value)} className="border-green-500 border-2 pr-20 pl-5 py-2 rounded-lg mb-5" type="password" placeholder="Password" />
+                    <input onChange={(e) => setSecondPassword(e.target.value)} className="border-green-500 border-2 pr-20 pl-5 py-2 rounded-lg mb-5" type="password" placeholder="Re-type password" />
+                    {error ? <p className="text-red-500 text-md pb-5">{error}</p> : null}
+                    <button onClick={handleSignUp} className="text-white font-bold bg-red-600 hover:bg-red-700 rounded-md py-2 px-28">Sign Up</button>
+                    <p className="absolute bottom-0 left-0 text-gray-500 p-10 opacity-90">Already have an account? <span className="cursor-pointer text-gray-300 hover:text-white" onClick={(e) => navigate('/sign-in')}>Sign In.</span></p>
+                </div>
             </div>
         </div>
     )
