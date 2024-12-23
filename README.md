@@ -19,6 +19,8 @@ Styling: Tailwind CSS
 API: The Movie Database (TMDB)
 Database: Cloud Firestore with Firebase Authentication
 
+I've deployed the project using netlify, here's the link: https://marvelous-cocada-78d4e9.netlify.app/
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
